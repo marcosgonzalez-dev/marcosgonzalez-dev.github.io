@@ -1,0 +1,71 @@
+---
+// src/pages/Hero.astro
+---
+
+<section
+    id="hero"
+    class="min-h-screen flex flex-col justify-center items-start px-6 md:px-20 max-w-7xl mx-auto pt-20"
+>
+    <div class="hero-line overflow-hidden mb-4">
+        <h1
+            data-lang="hero.hi"
+            class="font-montserrat font-extrabold text-[50px] text-theme-text leading-tight tracking-wide"
+        >
+            hola
+        </h1>
+    </div>
+
+    <div class="hero-line overflow-hidden mb-6">
+        <h2>
+            <span
+                class="font-poppins font-light text-[30px] md:text-[40px] text-theme-text leading-tight"
+                data-lang="hero.intro"
+                >mi nombre es
+            </span>
+            <span
+                class="font-montserrat font-extrabold text-[30px] md:text-[40px] text-theme-text leading-tight"
+                data-lang="hero.name">silabale</span
+            >
+        </h2>
+    </div>
+
+    <div class="hero-line overflow-hidden">
+        <h3>
+            <span
+                class="font-vast text-[30px] md:text-[40px] text-theme-text leading-tight"
+            >
+                Analista de Ciberseguridad &
+            </span>
+
+            <span
+                class="font-vast text-[30px] md:text-[40px] text-blue-400 leading-tight"
+            >
+                &lt;desarrollador/&gt;
+            </span>
+        </h3>
+    </div>
+</section>
+
+<script is:inline>
+    document.addEventListener("DOMContentLoaded", () => {
+        // Verificamos si GSAP está disponible
+        if (typeof gsap !== "undefined") {
+            const tl = gsap.timeline({
+                defaults: { ease: "power4.out", duration: 1.2 },
+            });
+
+            // Animación: Los textos suben desde abajo revelándose (Mask effect)
+            tl.from(".hero-line h1, .hero-line h2, .hero-line h3", {
+                y: 100,
+                opacity: 0,
+                stagger: 0.3,
+                skewY: 7,
+                delay: 0.5,
+            });
+        } else {
+            console.warn(
+                "GSAP no encontrado. Asegúrate de importar 'gsap' en tu Layout o script.",
+            );
+        }
+    });
+</script>

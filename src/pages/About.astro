@@ -1,0 +1,86 @@
+---
+// src/components/About.astro
+---
+
+<section
+    id="about"
+    class="py-20 px-6 md:px-20 max-w-7xl mx-auto border-t border-white/5"
+>
+    <div class="grid md:grid-cols-[200px_1fr] gap-8 items-start">
+        <div class="opacity-0 reveal-text">
+            <span
+                class="font-montserrat font-medium text-sm text-theme-muted uppercase tracking-[0.2em]"
+                data-lang="about.label"
+            >
+                // perfil
+            </span>
+        </div>
+
+        <div class="opacity-0 reveal-text">
+            <p
+                class="font-poppins font-light text-lg md:text-xl leading-relaxed text-theme-text"
+                data-lang="about.p1"
+            >
+                Estudiante en
+                <strong class="text-theme-text font-bold"
+                    >Tecnologías de la Información y Comunicación</strong
+                >
+                (4º semestre) con enfoque en
+                <span
+                    class="text-blue-400 font-mono text-base bg-blue-400/20 px-1 rounded"
+                >
+                    ciberseguridad
+                </span>
+                y administración de sistemas.
+            </p>
+
+            <p
+                class="font-poppins font-light text-lg md:text-xl leading-relaxed text-theme-text mt-6"
+                data-lang="about.p2"
+            >
+                Poseo una sólida trayectoria técnica combinando soporte de
+                hardware, desarrollo de software (
+                <span class="font-mono text-theme-accent text-base">C++</span>,
+                <span class="font-mono text-theme-accent text-base"
+                    >Node.js</span
+                >) y certificaciones profesionales de
+                <strong class="text-theme-text font-bold">Google</strong> e
+                <strong class="text-theme-text font-bold">ISC2</strong>.
+            </p>
+
+            <p
+                class="font-poppins font-light text-lg md:text-xl leading-relaxed text-theme-text mt-6"
+                data-lang="about.p3"
+            >
+                Experto en resolución de problemas técnicos y optimización de
+                infraestructuras digitales. Capacidad demostrada para liderar
+                capacitaciones técnicas y gestionar la integridad de datos en
+                entornos críticos.
+            </p>
+        </div>
+    </div>
+</section>
+
+<script>
+    import { gsap } from "gsap";
+    import { ScrollTrigger } from "gsap/ScrollTrigger";
+
+    gsap.registerPlugin(ScrollTrigger);
+
+    // Animación simple: Aparece suavemente al hacer scroll
+    gsap.fromTo(
+        ".reveal-text",
+        { y: 30, opacity: 0 },
+        {
+            y: 0,
+            opacity: 1,
+            duration: 1,
+            stagger: 0.2,
+            ease: "power3.out",
+            scrollTrigger: {
+                trigger: "#about",
+                start: "top 80%",
+            },
+        },
+    );
+</script>

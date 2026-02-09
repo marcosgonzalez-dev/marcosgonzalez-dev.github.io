@@ -1,0 +1,62 @@
+/* src/styles/global.css */
+@import "tailwindcss";
+
+@theme {
+    --font-montserrat: "Montserrat", sans-serif;
+    --font-mono: "JetBrains Mono", monospace;
+
+    /* Mapeo de variables */
+    --color-theme-bg: var(--bg-color);
+    --color-theme-text: var(--text-color);
+    --color-theme-muted: var(--muted-color);
+
+    --color-theme-border: var(--border-color);
+    --color-theme-accent: var(--accent-color);
+}
+
+:root {
+    /* --- MODO OSCURO --- */
+    --bg-color: #050505;
+    --text-color: #ffffff;
+    --muted-color: #9ca3af;
+    --border-color: rgba(255, 255, 255, 0.1);
+    --accent-color: #ffffff;
+}
+
+:root[data-theme="light"] {
+    /* --- MODO CLARO (TINTA SOBRE PAPEL) --- */
+    /* Fondo: Blanco absoluto */
+    --bg-color: #ffffff;
+
+    /* Texto Principal: NEGRO PURO */
+    --text-color: #000000;
+
+    /* Texto Secundario (Muted): TAMBIÉN NEGRO (o casi negro) */
+    /* Lo ponemos en #171717 (Neutral 900) para que sea súper legible */
+    --muted-color: #171717;
+
+    /* Tarjetas: Blanco humo para diferenciar sutilmente sin perder luz */
+    --card-bg: #f5f5f5;
+
+    /* Bordes: Negro con poca opacidad, para que definan bien */
+    --border-color: rgba(0, 0, 0, 0.2);
+
+    /* Acentos: Negro */
+    --accent-color: #000000;
+}
+
+@layer base {
+    body {
+        background-color: var(--color-theme-bg);
+        color: var(--color-theme-text);
+        font-family: var(--font-montserrat);
+        transition: background-color 0.3s ease, color 0.3s ease;
+    }
+}
+
+/* Utilidad para forzar terminales oscuras siempre */
+.force-dark {
+    background-color: #0c0c0c !important;
+    color: #ffffff !important;
+    border-color: rgba(255, 255, 255, 0.1) !important;
+}

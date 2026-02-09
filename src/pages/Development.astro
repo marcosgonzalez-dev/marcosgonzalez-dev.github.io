@@ -1,0 +1,72 @@
+---
+// src/components/DevStack.astro
+
+const devTecnologies = [
+    "ASTRO",
+    "TAILWIND",
+    "REACT",
+    "NEXT.JS",
+    "TYPESCRIPT",
+    "NODE.JS",
+    "GIT",
+    "MONGODB",
+];
+---
+
+<section
+    id="dev-stack"
+    class="py-20 px-6 md:px-20 max-w-7xl mx-auto border-t border-white/5"
+>
+    <div class="mb-16 text-center opacity-0 reveal-dev-title">
+        <span
+            class="font-montserrat font-medium text-sm text-theme-muted uppercase tracking-[0.2em]"
+            data-lang="title.stack"
+        >
+            // Tecnologías de desarrollo
+        </span>
+    </div>
+
+    <div
+        class="flex flex-wrap justify-center items-center gap-x-10 gap-y-6 md:gap-x-16 md:gap-y-10"
+    >
+        {
+            devTecnologies.map((tool) => (
+                <div class="dev-item opacity-0 group cursor-default">
+                    <span class="block font-montserrat font-bold text-3xl md:text-5xl tracking-tight text-theme-accent transition-transform duration-300 ease-out group-hover:-translate-y-2">
+                        {tool}
+                    </span>
+                </div>
+            ))
+        }
+    </div>
+</section>
+
+<script>
+    import { gsap } from "gsap";
+    import { ScrollTrigger } from "gsap/ScrollTrigger";
+
+    gsap.registerPlugin(ScrollTrigger);
+
+    gsap.to(".reveal-dev-title", {
+        scrollTrigger: { trigger: "#dev-stack", start: "top 85%" },
+        y: 0,
+        opacity: 1,
+        duration: 1,
+        ease: "power3.out",
+    });
+
+    ScrollTrigger.batch(".dev-item", {
+        start: "top 90%",
+        onEnter: (batch) =>
+            gsap.to(batch, {
+                opacity: 1,
+                scale: 1,
+                stagger: { each: 0.05, from: "random" },
+                duration: 0.8,
+                ease: "back.out(1.7)",
+            }),
+    });
+
+    gsap.set(".dev-item", { scale: 0.9 });
+    gsap.set(".reveal-dev-title", { y: 20 });
+</script>

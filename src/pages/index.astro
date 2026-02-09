@@ -1,0 +1,68 @@
+---
+import "../styles/global.css";
+import Header from "./Header.astro";
+import Hero from "./Hero.astro";
+import About from "./About.astro";
+
+// Componentes del Modo Development
+import Development from "./Development.astro";
+import DevCerts from "./DevCerts.astro";
+
+// Componentes del Modo Ciberseguridad
+import CibersecurityAnalyst from "./CibersecurityAnalist.astro";
+import CibersecurityCerts from "./CibersecurityCerts.astro";
+---
+
+<html lang="es">
+	<head>
+		<meta charset="utf-8" />
+		<link rel="icon" type="image/svg+xml" href="/favicon.svg" />
+		<link rel="icon" href="/favicon.ico" />
+		<link rel="preconnect" href="https://fonts.googleapis.com" />
+		<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+		<link
+			href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;500;800&family=Poppins:wght@300;700&family=Vast+Shadow&display=swap"
+			rel="stylesheet"
+		/>
+		<meta name="viewport" content="width=device-width" />
+		<meta name="generator" content={Astro.generator} />
+		<title>Portafolio</title>
+	</head>
+	<Header />
+	<body>
+		<Hero />
+		<About />
+
+		<div class="min-h-screen">
+			<div id="view-dev" class="animate-fade-in">
+				<Development />
+				<DevCerts />
+			</div>
+
+			<div id="view-sec" style="display: none;" class="animate-fade-in">
+				<CibersecurityAnalyst />
+				<CibersecurityCerts />
+			</div>
+		</div>
+
+		<div class="h-20"></div>
+	</body>
+</html>
+
+<style>
+	/* Animación suave al cambiar de pestaña */
+	.animate-fade-in {
+		animation: fadeIn 0.5s ease-out forwards;
+	}
+
+	@keyframes fadeIn {
+		from {
+			opacity: 0;
+			transform: translateY(10px);
+		}
+		to {
+			opacity: 1;
+			transform: translateY(0);
+		}
+	}
+</style>
