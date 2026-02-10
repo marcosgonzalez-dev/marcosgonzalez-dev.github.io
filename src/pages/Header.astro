@@ -6,18 +6,42 @@ import { translations } from "../translations/Translations.js";
     class="fixed top-0 left-0 w-full z-50 bg-theme-bg/90 backdrop-blur-md border-b border-theme-border transition-all duration-300"
 >
     <div
-        class="max-w-7xl mx-auto px-6 md:px-12 h-24 flex items-center justify-between"
+        class="max-w-7xl mx-auto px-6 md:px-12 h-24 flex items-center justify-between relative"
     >
-        <a href="/" class="z-50 group flex-shrink-0">
-            <span
-                class="font-montserrat font-medium text-[22px] md:text-[25px] leading-[30px] tracking-tight text-theme-text transition-opacity hover:opacity-80"
+        <div class="flex flex-col items-start justify-center gap-1">
+            <a href="/" class="z-50 group flex-shrink-0">
+                <span
+                    class="font-montserrat font-medium text-[20px] md:text-[25px] leading-tight tracking-tight text-theme-text transition-opacity hover:opacity-80"
+                >
+                    marcosgonzalez.dev
+                </span>
+            </a>
+
+            <nav
+                class="flex md:hidden items-center gap-0 bg-theme-card/50 p-[2px] rounded border border-theme-border"
             >
-                marcosgonzalez.dev
-            </span>
-        </a>
+                <button
+                    id="mob-btn-dev"
+                    class="px-2 py-0.5 rounded text-[10px] font-montserrat font-bold tracking-wide transition-all duration-300"
+                    onclick="switchMode('dev')"
+                    data-lang="nav.dev"
+                >
+                    DEV
+                </button>
+                <div class="w-[1px] h-3 bg-theme-border mx-1"></div>
+                <button
+                    id="mob-btn-sec"
+                    class="px-2 py-0.5 rounded text-[10px] font-montserrat font-bold tracking-wide transition-all duration-300"
+                    onclick="switchMode('sec')"
+                    data-lang="nav.sec"
+                >
+                    SEC
+                </button>
+            </nav>
+        </div>
 
         <nav
-            class="hidden md:flex items-center gap-1 bg-theme-card p-1 rounded-full border border-theme-border"
+            class="hidden md:flex items-center gap-1 bg-theme-card p-1 rounded-full border border-theme-border absolute left-1/2 transform -translate-x-1/2"
         >
             <button
                 id="btn-dev"
@@ -37,32 +61,15 @@ import { translations } from "../translations/Translations.js";
             </button>
         </nav>
 
-        <div class="hidden md:flex items-center gap-6">
+        <div class="flex items-center gap-3 md:gap-6">
             <div
-                class="flex items-center gap-6 border-r border-theme-border pr-6"
+                class="hidden md:flex items-center gap-6 border-r border-theme-border pr-6"
             >
                 <a
                     href="#"
                     class="relative group font-montserrat font-medium text-sm text-theme-muted hover:text-theme-text transition-colors flex items-center gap-2"
                 >
                     <span data-lang="nav.blog">blog</span>
-                    <svg
-                        xmlns="http://www.w3.org/2000/svg"
-                        width="18"
-                        height="18"
-                        viewBox="0 0 24 24"
-                        fill="none"
-                        stroke="currentColor"
-                        stroke-width="2"
-                        stroke-linecap="round"
-                        stroke-linejoin="round"
-                        ><path
-                            d="M14 2H6a2 2 0 0 0-2 2v16a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V8z"
-                        ></path><polyline points="14 2 14 8 20 8"
-                        ></polyline><line x1="16" y1="13" x2="8" y2="13"
-                        ></line><line x1="16" y1="17" x2="8" y2="17"
-                        ></line><polyline points="10 9 9 9 8 9"></polyline></svg
-                    >
                     <span
                         class="absolute -bottom-1 left-0 w-0 h-[1px] bg-theme-text transition-all duration-300 ease-out group-hover:w-full"
                     ></span>
@@ -74,20 +81,6 @@ import { translations } from "../translations/Translations.js";
                     class="relative group font-montserrat font-medium text-sm text-theme-muted hover:text-theme-text transition-colors flex items-center gap-2"
                 >
                     <span>github</span>
-                    <svg
-                        xmlns="http://www.w3.org/2000/svg"
-                        width="18"
-                        height="18"
-                        viewBox="0 0 24 24"
-                        fill="none"
-                        stroke="currentColor"
-                        stroke-width="2"
-                        stroke-linecap="round"
-                        stroke-linejoin="round"
-                        ><path
-                            d="M9 19c-5 1.5-5-2.5-7-3m14 6v-3.87a3.37 3.37 0 0 0-.94-2.61c3.14-.35 6.44-1.54 6.44-7A5.44 5.44 0 0 0 20 4.77 5.07 5.07 0 0 0 19.91 1S18.73.65 16 2.48a13.38 13.38 0 0 0-7 0C6.27.65 5.09 1 5.09 1A5.07 5.07 0 0 0 5 4.77a5.44 5.44 0 0 0-1.5 3.78c0 5.42 3.3 6.61 6.44 7A3.37 3.37 0 0 0 9 18.13V22"
-                        ></path></svg
-                    >
                     <span
                         class="absolute -bottom-1 left-0 w-0 h-[1px] bg-theme-text transition-all duration-300 ease-out group-hover:w-full"
                     ></span>
@@ -99,28 +92,13 @@ import { translations } from "../translations/Translations.js";
                     class="relative group font-montserrat font-medium text-sm text-theme-muted hover:text-theme-text transition-colors flex items-center gap-2"
                 >
                     <span>linkedIn</span>
-                    <svg
-                        xmlns="http://www.w3.org/2000/svg"
-                        width="18"
-                        height="18"
-                        viewBox="0 0 24 24"
-                        fill="none"
-                        stroke="currentColor"
-                        stroke-width="2"
-                        stroke-linecap="round"
-                        stroke-linejoin="round"
-                        ><path
-                            d="M16 8a6 6 0 0 1 6 6v7h-4v-7a2 2 0 0 0-2-2 2 2 0 0 0-2 2v7h-4v-7a6 6 0 0 1 6-6z"
-                        ></path><rect x="2" y="9" width="4" height="12"
-                        ></rect><circle cx="4" cy="4" r="2"></circle></svg
-                    >
                     <span
                         class="absolute -bottom-1 left-0 w-0 h-[1px] bg-theme-text transition-all duration-300 ease-out group-hover:w-full"
                     ></span>
                 </a>
             </div>
 
-            <div class="flex items-center gap-3">
+            <div class="flex items-center gap-2 md:gap-3">
                 <button
                     id="theme-toggle"
                     class="p-2 rounded-full hover:bg-theme-muted/10 text-theme-text transition-colors"
@@ -166,163 +144,98 @@ import { translations } from "../translations/Translations.js";
                     ES
                 </button>
             </div>
-        </div>
 
-        <button id="menu-toggle" class="md:hidden text-theme-text p-2">
-            <svg
-                xmlns="http://www.w3.org/2000/svg"
-                width="24"
-                height="24"
-                viewBox="0 0 24 24"
-                fill="none"
-                stroke="currentColor"
-                stroke-width="2"
-                stroke-linecap="round"
-                stroke-linejoin="round"
-                ><line x1="3" y1="12" x2="21" y2="12"></line><line
-                    x1="3"
-                    y1="6"
-                    x2="21"
-                    y2="6"></line><line x1="3" y1="18" x2="21" y2="18"
-                ></line></svg
-            >
-        </button>
+            <button id="menu-toggle" class="md:hidden text-theme-text p-1 ml-1">
+                <svg
+                    xmlns="http://www.w3.org/2000/svg"
+                    width="28"
+                    height="28"
+                    viewBox="0 0 24 24"
+                    fill="none"
+                    stroke="currentColor"
+                    stroke-width="2"
+                    stroke-linecap="round"
+                    stroke-linejoin="round"
+                    ><line x1="3" y1="12" x2="21" y2="12"></line><line
+                        x1="3"
+                        y1="6"
+                        x2="21"
+                        y2="6"></line><line x1="3" y1="18" x2="21" y2="18"
+                    ></line></svg
+                >
+            </button>
+        </div>
     </div>
 
     <div
         id="mobile-menu"
-        class="fixed inset-0 bg-theme-bg z-50 transform translate-x-full transition-transform duration-300 md:hidden flex flex-col justify-center items-center gap-6"
+        class="absolute top-[80px] right-0 w-auto transform translate-x-full transition-transform duration-300 md:hidden flex flex-col items-end py-4 px-6 gap-8 z-50"
     >
-        <button
-            class="absolute top-6 right-6 text-theme-text p-2"
-            onclick="closeMenu()"
-            aria-label="Cerrar menú"
+        <span
+            class="text-theme-muted text-[10px] font-mono tracking-[0.2em] border-b border-theme-text/10 pb-1"
+            data-lang="nav.menu">// Navegación</span
         >
-            <svg
-                xmlns="http://www.w3.org/2000/svg"
-                width="32"
-                height="32"
-                viewBox="0 0 24 24"
-                fill="none"
-                stroke="currentColor"
-                stroke-width="2"
-                stroke-linecap="round"
-                stroke-linejoin="round"
-                ><line x1="18" y1="6" x2="6" y2="18"></line><line
-                    x1="6"
-                    y1="6"
-                    x2="18"
-                    y2="18"></line></svg
-            >
-        </button>
-
-        <div class="flex flex-col gap-3 w-64 mb-4">
-            <button
-                id="mob-btn-dev"
-                class="w-full py-3 rounded-lg font-montserrat font-bold text-lg border border-theme-text transition-all duration-300"
-                onclick="switchMode('dev'); closeMenu()"
-            >
-                DESARROLLO
-            </button>
-            <button
-                id="mob-btn-sec"
-                class="w-full py-3 rounded-lg font-montserrat font-bold text-lg border border-theme-text opacity-50"
-                onclick="switchMode('sec'); closeMenu()"
-            >
-                CIBERSEGURIDAD
-            </button>
-        </div>
-
-        <div class="w-16 h-[1px] bg-theme-muted/30 mb-4"></div>
 
         <a
-            href="/blog"
-            class="relative group text-2xl font-montserrat text-theme-text"
+            href="#"
+            class="relative group block w-fit font-montserrat font-medium text-sm text-theme-muted hover:text-theme-text transition-colors"
             onclick="closeMenu()"
         >
-            Blog
+            <span data-lang="nav.blog">blog</span>
             <span
-                class="absolute -bottom-1 left-0 w-0 h-[2px] bg-theme-text transition-all duration-300 group-hover:w-full"
+                class="absolute -bottom-1 left-0 w-0 h-[2px] bg-theme-text transition-all duration-300 ease-out group-hover:w-full"
             ></span>
         </a>
 
         <a
             href="https://github.com/marcosgonzalez-dev"
             target="_blank"
-            class="relative group text-2xl font-montserrat text-theme-text"
+            class="relative group block w-fit font-montserrat font-medium text-sm text-theme-muted hover:text-theme-text transition-colors"
             onclick="closeMenu()"
         >
             GitHub
             <span
-                class="absolute -bottom-1 left-0 w-0 h-[2px] bg-theme-text transition-all duration-300 group-hover:w-full"
+                class="absolute -bottom-1 left-0 w-0 h-[2px] bg-theme-text transition-all duration-300 ease-out group-hover:w-full"
             ></span>
         </a>
 
         <a
             href="https://www.linkedin.com/in/marcosgonzalezchavez/"
             target="_blank"
-            class="relative group text-2xl font-montserrat text-theme-text"
+            class="relative group block w-fit font-montserrat font-medium text-sm text-theme-muted hover:text-theme-text transition-colors"
             onclick="closeMenu()"
         >
             LinkedIn
             <span
-                class="absolute -bottom-1 left-0 w-0 h-[2px] bg-theme-text transition-all duration-300 group-hover:w-full"
+                class="absolute -bottom-1 left-0 w-0 h-[2px] bg-theme-text transition-all duration-300 ease-out group-hover:w-full"
             ></span>
         </a>
     </div>
 </header>
 
 <script is:inline define:vars={{ translations }}>
-    // LÓGICA DEL MENÚ MÓVIL (NUEVO)
+    // --- LÓGICA MENÚ HAMBURGUESA ---
     const menuToggle = document.getElementById("menu-toggle");
     const mobileMenu = document.getElementById("mobile-menu");
 
-    // Función para abrir/cerrar
     menuToggle?.addEventListener("click", () => {
-        if (mobileMenu.classList.contains("translate-x-full")) {
-            // Abrir
-            mobileMenu.classList.remove("translate-x-full");
-        } else {
-            // Cerrar
-            mobileMenu.classList.add("translate-x-full");
-        }
+        mobileMenu.classList.toggle("translate-x-full");
     });
 
-    // Función global para cerrar menú (al pulsar un link)
     window.closeMenu = function () {
         mobileMenu?.classList.add("translate-x-full");
     };
 
-    // LÓGICA DE IDIOMA
+    // --- LÓGICA IDIOMA ---
     const langToggle = document.getElementById("lang-toggle");
     let currentLang = localStorage.getItem("lang") || "es";
 
     function updateTexts(lang) {
-        // Buscamos elementos con data-lang
-        const elements = document.querySelectorAll("[data-lang]");
-
-        elements.forEach((element) => {
+        document.querySelectorAll("[data-lang]").forEach((element) => {
             const key = element.getAttribute("data-lang");
-
-            // VALIDACIÓN DE SEGURIDAD 1: ¿Existe el idioma?
-            if (!translations[lang]) {
-                console.error(
-                    `Error crítico: No existe el idioma '${lang}' en el diccionario.`,
-                );
-                return;
-            }
-
-            // VALIDACIÓN DE SEGURIDAD 2: ¿Existe la traducción específica?
-            const translationValue = translations[lang][key];
-
-            if (translationValue) {
-                // Si existe, la aplicamos
-                element.innerHTML = translationValue;
-            } else {
-                // Si NO existe, NO hacemos nada (así el texto original no desaparece)
-                console.warn(
-                    `⚠️ Traducción faltante para: "${key}" en idioma: "${lang}". Se mantiene el texto original.`,
-                );
+            // Soporte para anidado (nav.blog) o plano
+            if (translations[lang] && translations[lang][key]) {
+                element.innerHTML = translations[lang][key];
             }
         });
     }
@@ -331,24 +244,19 @@ import { translations } from "../translations/Translations.js";
         currentLang = lang;
         localStorage.setItem("lang", lang);
         if (langToggle) langToggle.textContent = lang.toUpperCase();
-
-        // Ejecutamos la actualización de textos
         updateTexts(lang);
     }
 
-    setLanguage(currentLang);
-
-    //Ejecutar otra vez cuando todo el HTML haya cargado
-    document.addEventListener("DOMContentLoaded", () => {
-        setLanguage(currentLang);
-    });
+    document.addEventListener("DOMContentLoaded", () =>
+        setLanguage(currentLang),
+    );
 
     langToggle?.addEventListener("click", () => {
         const newLang = currentLang === "es" ? "en" : "es";
         setLanguage(newLang);
     });
 
-    // LÓGICA DE TEMA (CLARO / OSCURO)
+    // --- LÓGICA TEMA ---
     const themeToggle = document.getElementById("theme-toggle");
     const iconSun = document.getElementById("icon-sun");
     const iconMoon = document.getElementById("icon-moon");
@@ -357,94 +265,97 @@ import { translations } from "../translations/Translations.js";
     function setTheme(isLight) {
         if (isLight) {
             html.setAttribute("data-theme", "light");
-            if (iconSun) iconSun.classList.remove("hidden");
-            if (iconMoon) iconMoon.classList.add("hidden");
+            iconSun?.classList.remove("hidden");
+            iconMoon?.classList.add("hidden");
             localStorage.setItem("theme", "light");
         } else {
             html.removeAttribute("data-theme");
-            if (iconSun) iconSun.classList.add("hidden");
-            if (iconMoon) iconMoon.classList.remove("hidden");
+            iconSun?.classList.add("hidden");
+            iconMoon?.classList.remove("hidden");
             localStorage.setItem("theme", "dark");
         }
-        // Refrescar estilo de botones si la función existe
+        // Repintar botones al cambiar tema
         const currentMode = localStorage.getItem("mode") || "dev";
-        if (typeof window.switchMode === "function")
-            window.switchMode(currentMode);
+        if (window.switchMode) window.switchMode(currentMode);
     }
 
     const savedTheme = localStorage.getItem("theme") === "light";
     setTheme(savedTheme);
 
     themeToggle?.addEventListener("click", () => {
-        const isLight = html.hasAttribute("data-theme");
-        setTheme(!isLight);
+        setTheme(!html.hasAttribute("data-theme"));
     });
 
-    // LÓGICA DE MODOS (DEV / SEC)
+    // --- LÓGICA MODOS (ACTUALIZADA PARA INCLUIR MÓVIL) ---
     window.switchMode = function (mode) {
-        // Guardar preferencia
-        localStorage.setItem("portfolioMode", mode);
+        // 1. Botones PC
+        const btnDev = document.getElementById("btn-dev");
+        const btnSec = document.getElementById("btn-sec");
 
-        // Disparar evento para que otros componentes se enteren
-        document.dispatchEvent(
-            new CustomEvent("modeChanged", { detail: mode }),
-        );
-
-        // ACTUALIZAR VISUALMENTE LOS BOTONES MÓVILES
+        // 2. Botones Móvil (NUEVOS)
         const mobDev = document.getElementById("mob-btn-dev");
         const mobSec = document.getElementById("mob-btn-sec");
 
-        if (mobDev && mobSec) {
-            if (mode === "dev") {
-                // Estilo Activo para Dev
-                mobDev.classList.remove(
-                    "opacity-50",
-                    "bg-transparent",
-                    "text-theme-text",
-                );
-                mobDev.classList.add("bg-theme-text", "text-theme-bg"); // Invertido: Fondo sólido
+        // 3. Contenido (IDs originales del script anterior)
+        const viewDev = document.getElementById("view-dev"); // O "content-dev" si lo cambiaste
+        const viewSec = document.getElementById("view-sec"); // O "content-sec" si lo cambiaste
 
-                // Estilo Inactivo para Sec
-                mobSec.classList.add(
-                    "opacity-50",
-                    "bg-transparent",
-                    "text-theme-text",
-                );
-                mobSec.classList.remove("bg-theme-text", "text-theme-bg");
-            } else {
-                // Estilo Inactivo para Dev
-                mobDev.classList.add(
-                    "opacity-50",
-                    "bg-transparent",
-                    "text-theme-text",
-                );
-                mobDev.classList.remove("bg-theme-text", "text-theme-bg");
+        localStorage.setItem("mode", mode);
 
-                // Estilo Activo para Sec
-                mobSec.classList.remove(
-                    "opacity-50",
-                    "bg-transparent",
-                    "text-theme-text",
-                );
-                mobSec.classList.add("bg-theme-text", "text-theme-bg");
+        // Estilos
+        const setActive = (el) => {
+            if (!el) return;
+            el.style.backgroundColor = "var(--color-theme-text)";
+            el.style.color = "var(--color-theme-bg)";
+            el.style.opacity = "1";
+            el.style.boxShadow = "0 0 10px rgba(125,125,125,0.2)";
+        };
+        const setInactive = (el) => {
+            if (!el) return;
+            el.style.backgroundColor = "transparent";
+            el.style.color = "var(--color-theme-text)";
+            el.style.opacity = "0.6";
+            el.style.boxShadow = "none";
+        };
+
+        if (mode === "dev") {
+            // PC
+            setActive(btnDev);
+            setInactive(btnSec);
+            // Móvil
+            setActive(mobDev);
+            setInactive(mobSec);
+
+            // Contenido
+            if (viewDev && viewSec) {
+                viewDev.classList.remove("hidden");
+                viewDev.style.display = "block";
+                viewSec.classList.add("hidden");
+                viewSec.style.display = "none";
+            }
+        } else {
+            // PC
+            setInactive(btnDev);
+            setActive(btnSec);
+            // Móvil
+            setInactive(mobDev);
+            setActive(mobSec);
+
+            // Contenido
+            if (viewDev && viewSec) {
+                viewSec.classList.remove("hidden");
+                viewSec.style.display = "block";
+                viewDev.classList.add("hidden");
+                viewDev.style.display = "none";
             }
         }
 
-        // Lógica original: Mostrar/Ocultar secciones
-        if (mode === "dev") {
-            document.body.classList.remove("mode-sec");
-            document.body.classList.add("mode-dev");
-        } else {
-            document.body.classList.remove("mode-dev");
-            document.body.classList.add("mode-sec");
-        }
+        // Refrescar animaciones
+        setTimeout(
+            () => window.ScrollTrigger && window.ScrollTrigger.refresh(),
+            100,
+        );
     };
-
-    // Refrescar GSAP
-    setTimeout(
-        () => window.ScrollTrigger && window.ScrollTrigger.refresh(),
-        100,
-    );
 
     document.addEventListener("DOMContentLoaded", () => {
         const savedMode = localStorage.getItem("mode") || "dev";

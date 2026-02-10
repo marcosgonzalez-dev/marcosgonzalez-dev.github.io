@@ -4,6 +4,7 @@ export const translations = {
         "nav.dev": "DESARROLLO",
         "nav.sec": "CIBERSEGURIDAD",
         "nav.blog": "blog",
+        "nav.menu": "Navegación",
 
         // Hero
         "hero.hi": "hola",
@@ -30,6 +31,7 @@ export const translations = {
         "nav.dev": "DEVELOPMENT",
         "nav.sec": "CYBERSECURITY",
         "nav.blog": "blog",
+        "nav.menu": "Navigation",
 
         // Hero
         "hero.hi": "hi",
